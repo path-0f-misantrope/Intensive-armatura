@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты предсказания</title>
+</head>
+<body>
+    <h1>Результаты предсказания</h1>
+    <p><strong>Изменение цены:</strong> {{ .change }}</p>
+
+    <!-- График в формате Base64 -->
+    <h2>График предсказаний:</h2>
+    <img src="data:image/png;base64,{{ .image_base64 }}" alt="График предсказаний">
+
+    <h2>Числовые данные:</h2>
+    <table border="1">
+        <tr>
+            <th>Дата</th>
+            <th>Предсказанная цена</th>
+        </tr>
+        {{ range $index, $date := .dates }}
+        <tr>
+            <td>{{ $date }}</td>
+            <td>{{ index $.predictions $index }}</td>
+        </tr>
+        {{ end }}
+    </table>
+
+    <br>
+    <a href="/">Загрузить новый файл</a>
+</body>
+</html>
