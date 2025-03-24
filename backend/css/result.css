@@ -32,13 +32,20 @@ h1 {
 
 .block {
     background-color: #f4f6fb;
-    height: 65vh;
+    min-height: 65vh;
+    height: 100%;
     display: flex;
     justify-content: center;
 }
 
 .block-two {
-    width: 320px;
+    /* width: 1000px; */
+    text-align: center;
+}
+
+.data-block {
+    display: flex;
+    justify-content: center;
 }
 
 .a-text {
@@ -92,4 +99,8 @@ footer {
 
 .about-us {
     margin-right: 50px;
+}
+
+.number-a {
+    color: #007bfc;
 }

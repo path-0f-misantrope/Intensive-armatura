@@ -16,26 +16,34 @@
             <p><strong>Изменение цены:</strong> {{ .change }}</p>
 
             <!-- График в формате Base64 -->
-            <h2>График предсказаний:</h2>
-            <img src="data:image/png;base64,{{ .image_base64 }}" alt="График предсказаний">
+            <div class="data-block">
+                <div class="schedule-div">
+                    <h2>График предсказаний:</h2>
+                    <img src="data:image/png;base64,{{ .image_base64 }}" alt="График предсказаний">
+                </div>
 
-            <h2>Числовые данные:</h2>
-            <table border="1">
-                <tr>
-                    <th>Дата</th>
-                    <th>Предсказанная цена</th>
-                </tr>
-                {{ range $index, $date := .dates }}
-                <tr>
-                    <td>{{ $date }}</td>
-                    <td>{{ index $.predictions $index }}</td>
-                </tr>
-                {{ end }}
-            </table>
+                <div class="dta-div">
+                    <h2>Числовые данные:</h2>
+                    <table border="1">
+                        <tr>
+                            <th>Дата</th>
+                            <th>Предсказанная цена</th>
+                        </tr>
+                        {{ range $index, $date := .dates }}
+                        <tr>
+                            <td>{{ $date }}</td>
+                            <td>{{ index $.predictions $index }}</td>
+                        </tr>
+                        {{ end }}
+                    </table>
 
-            <br>
+                    <br>
+                </div>
+            </div>
             <a href="/" class="a-text"><button class="btn">Загрузить новый файл</button></a>
+        
         </div>
+        
     </div>
     <footer>
         <div class="partner">
@@ -48,13 +56,13 @@
         </div>
         <div class="about-us">
             <h3>Над проектом работали:</h3>
-            <p>Хусаинов Марат</p>
-            <p>Кривобокова Ольга</p>
-            <p>Салимов Динислам</p>
+            <p><a href="https://t.me/apre1sky">Хусаинов Марат</a></p>
+            <p><a href="https://t.me/melluro">Кривобокова Ольга</a></p>
+            <p><a href="https://t.me/exe_141592">Салимов Динислам</a></p>
         </div>
         <div class="with-us">
             <h3>Связь с нами:</h3>
-            <a href="tel:+79857972220">+79857972220</a>
+            <a href="tel:+79857972220" class="number-a">+79857972220</a>
             <p>Телеграмм: <a href="https://t.me/exe_141592">@exe_141592</a></p>
             <p><a href="https://github.com/path-0f-misantrope/Intensive-armatura" class="git">Наш github</a></p>
         </div>
