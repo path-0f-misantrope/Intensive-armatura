@@ -4,12 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Загрузка файла</title>
+    <link rel="stylesheet" href="../css/upload.css">
 </head>
 <body>
-    <h1>Загрузите CSV-файл</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <button type="submit">Отправить</button>
-    </form>
+    <header>
+        <h1>Загрузка CSV-файла</h1>
+        <div class="img"><a href="https://samolet.ru/"><img src="../img/icon-1.png" class="icon"></a></div>
+    </header>
+    <div class="block">
+        <div class="block-button">
+            <h3 class="text-about">На этой странице вы можете загрузить csv-файл используя кнопки ниже</h3>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" required class="input-btn">
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="partner">
+            <h3 class="text-partner">Наши партнеры:</h3>
+            <div class="img-samolet">
+                <a href="https://samolet.ru/" class="a-partner">
+                    <p>Самолет<img src="../img/icon-1.png" class="icon-samolet"></p>
+                </a>
+            </div>
+        </div>
+        <div class="about-us">
+            <h3>Над проектом работали:</h3>
+            <p>Хусаинов Марат</p>
+            <p>Кривобокова Ольга</p>
+            <p>Салимов Динислам</p>
+        </div>
+        <div class="with-us">
+            <h3>Связь с нами:</h3>
+            <a href="tel:+79857972220">+79857972220</a>
+            <p>Телеграмм: <a href="https://t.me/exe_141592">@exe_141592</a></p>
+            <p><a href="https://github.com/path-0f-misantrope/Intensive-armatura" class="git">Наш github</a></p>
+        </div>
+    </footer>
 </body>
 </html>

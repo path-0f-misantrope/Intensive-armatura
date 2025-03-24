@@ -4,30 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Результаты предсказания</title>
+    <link rel="stylesheet" href="../css/result.css">
 </head>
 <body>
-    <h1>Результаты предсказания</h1>
-    <p><strong>Изменение цены:</strong> {{ .change }}</p>
+    <header>
+        <h1>Результаты предсказания</h1>
+        <div class="img"><a href="https://samolet.ru/"><img src="../img/icon-1.png" class="icon"></a></div>
+    </header>
+    <div class="block">
+        <div class="block-two">
+            <p><strong>Изменение цены:</strong> {{ .change }}</p>
 
-    <!-- График в формате Base64 -->
-    <h2>График предсказаний:</h2>
-    <img src="data:image/png;base64,{{ .image_base64 }}" alt="График предсказаний">
+            <!-- График в формате Base64 -->
+            <h2>График предсказаний:</h2>
+            <img src="data:image/png;base64,{{ .image_base64 }}" alt="График предсказаний">
 
-    <h2>Числовые данные:</h2>
-    <table border="1">
-        <tr>
-            <th>Дата</th>
-            <th>Предсказанная цена</th>
-        </tr>
-        {{ range $index, $date := .dates }}
-        <tr>
-            <td>{{ $date }}</td>
-            <td>{{ index $.predictions $index }}</td>
-        </tr>
-        {{ end }}
-    </table>
+            <h2>Числовые данные:</h2>
+            <table border="1">
+                <tr>
+                    <th>Дата</th>
+                    <th>Предсказанная цена</th>
+                </tr>
+                {{ range $index, $date := .dates }}
+                <tr>
+                    <td>{{ $date }}</td>
+                    <td>{{ index $.predictions $index }}</td>
+                </tr>
+                {{ end }}
+            </table>
 
-    <br>
-    <a href="/">Загрузить новый файл</a>
+            <br>
+            <a href="/" class="a-text"><button class="btn">Загрузить новый файл</button></a>
+        </div>
+    </div>
+    <footer>
+        <div class="partner">
+            <h3 class="text-partner">Наши партнеры:</h3>
+            <div class="img-samolet">
+                <a href="https://samolet.ru/" class="a-partner">
+                    <p>Самолет<img src="../img/icon-1.png" class="icon-samolet"></p>
+                </a>
+            </div>
+        </div>
+        <div class="about-us">
+            <h3>Над проектом работали:</h3>
+            <p>Хусаинов Марат</p>
+            <p>Кривобокова Ольга</p>
+            <p>Салимов Динислам</p>
+        </div>
+        <div class="with-us">
+            <h3>Связь с нами:</h3>
+            <a href="tel:+79857972220">+79857972220</a>
+            <p>Телеграмм: <a href="https://t.me/exe_141592">@exe_141592</a></p>
+            <p><a href="https://github.com/path-0f-misantrope/Intensive-armatura" class="git">Наш github</a></p>
+        </div>
+    </footer>
 </body>
 </html>
