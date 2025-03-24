@@ -62,6 +62,7 @@ h1 {
     transition: 0.7s;
     margin: 0 auto;
     display: block;
+    margin-bottom: 20px;
 }
 
 .btn:hover {
