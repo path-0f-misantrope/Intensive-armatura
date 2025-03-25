@@ -15,7 +15,7 @@
 ### Конечный результат:
 [Конечная работа ipynb](https://github.com/path-0f-misantrope/Intensive-armatura/blob/марат/модель.ipynb)
 
-[Презентация]()
+[Презентация](https://github.com/path-0f-misantrope/Intensive-armatura/blob/%D0%9E%D0%BB%D1%8F/samolet_presentation_template.pptx)
 
 [Приложение-сервер №1](https://github.com/path-0f-misantrope/Intensive-armatura/blob/main/modelserver.py)
 
