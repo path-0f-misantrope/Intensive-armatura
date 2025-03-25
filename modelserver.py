@@ -1,15 +1,31 @@
+import os
 import joblib
 import numpy as np
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')  # Используем безголовый бэкенд для Matplotlib
 import matplotlib.pyplot as plt
+
 import base64
 import io
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# Загружаем модель
-model = joblib.load("C:\\Projects\\intensive\\sarimax_model.joblib")
+import sys
+
+
+if getattr(sys, 'frozen', False): 
+    BASE_DIR = sys._MEIPASS
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model_path = os.path.join(BASE_DIR, "sarimax_model.joblib")
+
+
+
+model = joblib.load(model_path)
+
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -25,7 +41,7 @@ def predict():
     predicted_values = model.predict(start=df_test.index[0], end=df_test.index[-1], exog=exog_test)
     df_test["predict"] = predicted_values
 
-    # Построение графика
+
     plt.figure(figsize=(10, 5))
 
     plt.plot(df_test.index, df_test["predict"], label='Прогноз', color='blue', linestyle='dashed')
@@ -34,18 +50,18 @@ def predict():
     plt.ylabel('Цена')
     plt.legend()
 
-    # Сохранение в буфер памяти (без сохранения на диск)
+
     img_buffer = io.BytesIO()
     plt.savefig(img_buffer, format="png")
     plt.close()
     img_buffer.seek(0)
 
-    # Конвертация в Base64
+ 
     img_base64 = base64.b64encode(img_buffer.read()).decode("utf-8")
 
     return jsonify({
         "dates": df_test.index.strftime("%Y-%m-%d").tolist(),
-        "prediction": df_test["predict"].tolist(),
+        "prediction": df_test["predict"].round(2).tolist(),
         "image_base64": img_base64
     })
 
