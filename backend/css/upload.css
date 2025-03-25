@@ -27,7 +27,7 @@ h1 {
 
 .block {
     background-color: #f4f6fb;
-    height: 65vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,13 +85,9 @@ footer {
 }
 
 .partner {
-    margin-right: 50px;
+    margin-right: 25px;
 }
 
 .about-us {
-    margin-right: 50px;
-}
-
-.number-a {
-    color: #007bfc;
+    margin-left: 25px;
 }

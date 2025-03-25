@@ -32,7 +32,7 @@ h1 {
 
 .block {
     background-color: #f4f6fb;
-    min-height: 65vh;
+    min-height: 60vh;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -95,13 +95,9 @@ footer {
 }
 
 .partner {
-    margin-right: 50px;
+    margin-right: 25px;
 }
 
 .about-us {
-    margin-right: 50px;
-}
-
-.number-a {
-    color: #007bfc;
+    margin-left: 25px;
 }
