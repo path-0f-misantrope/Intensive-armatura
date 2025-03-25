@@ -13,12 +13,10 @@
 Салимов Динислам: [TI](https://github.com/path-0f-misantrope/Intensive-armatura/blob/Dinis/Model_fittings%20(1).ipynb)
 
 ### Конечный результат:
-[Конечная работа ipynb]()
+[Конечная работа ipynb](https://github.com/path-0f-misantrope/Intensive-armatura/blob/марат/модель.ipynb)
 
-[Submisshion файл]()
+[Презентация](https://github.com/path-0f-misantrope/Intensive-armatura/blob/%D0%9E%D0%BB%D1%8F/samolet_presentation_template1.pdf)
 
-[test.xlsx]()
+[Приложение-сервер №1](https://github.com/path-0f-misantrope/Intensive-armatura/blob/main/modelserver.py)
 
-[Презентация]()
-
-[Приложение]()
+[Приложение-сервер №2](https://github.com/path-0f-misantrope/Intensive-armatura/tree/main/backend)
